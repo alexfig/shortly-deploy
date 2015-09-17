@@ -26,7 +26,7 @@ describe('', function() {
 
         done();
       });
-    },100);
+    },500);
   });
 
   describe('Link creation: ', function() {

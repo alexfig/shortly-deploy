@@ -6,9 +6,12 @@ var crypto = require('crypto');
 var Promise = require('bluebird');
 
 // 27017 is the default port for connecting to MongoDB
-
-//mongoose.connect('mongodb://localhost/test');
-mongoose.connect('mongodb://MongoLabs:TIu7B1MQtbLG59N0nEG3oJFcefgfyEBA9ZX4lzb5vyo-@ds040898.mongolab.com:40898/MongoLabs');
+if(!process.env.PORT) {
+  mongoose.connect('mongodb://localhost/test');
+}
+else{
+  mongoose.connect('mongodb://MongoLabs:TIu7B1MQtbLG59N0nEG3oJFcefgfyEBA9ZX4lzb5vyo-@ds040898.mongolab.com:40898/MongoLabs');
+}
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {
