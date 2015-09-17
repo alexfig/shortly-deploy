@@ -6,7 +6,7 @@ iisnode.yml
 
 db/shortly.sqlite
 node_modules
-public/dist
+# public/dist
 
 # Icon must ends with two \r.
 Icon
