@@ -58,6 +58,6 @@ db.once('open', function (callback) {
   db.Link = mongoose.model('Link', urlsSchema);
   db.User = mongoose.model('User', usersSchema);
   console.log('models initialized');
+  module.exports = db;
 });
 
-module.exports = db;
